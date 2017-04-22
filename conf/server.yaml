@@ -1,0 +1,28 @@
+# Number of threads for receiving, decrypting and replaying packets
+threads: 8
+
+# IP Address to listen for packets
+listen_addr: 192.168.100.12
+# Ports to listen for packets from
+listen_port: 7777
+# Name of the receiver
+listen_name: "receiver1"
+
+# Specify whether or not dummy interfaces need to be setup
+configure_interfaces: true
+# The number of interfaces to bet setup (Configured in the kernel module)
+dummy_count: 5
+
+# AES key to be used to decrypt messages
+server_key: 0Vm0fyPobOScaYwOwvpPDg0pw0OUu3zUD68emEewido=
+
+# Sensors to receive traffic on.  Each sensor can have its own interface
+# or share where apprioriate
+# receivers:
+#   suricata03:          # Name of the sensor
+#     name: eth99        # interface to replay traffic on
+#     dummy_dev: dummy0  # type of dummy interface
+receivers:
+  suricata03:
+    name: eth99
+    dummy_dev: dummy0

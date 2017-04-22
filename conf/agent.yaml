@@ -1,0 +1,20 @@
+# Name of sensor, must match receiver configuration
+sensor_name: suricata03
+# number of threads to encrypt and forward packets
+threads: 1
+
+# Receiver IP/DNS name and port
+destination: 
+  name: 192.168.100.12
+  port: 7777
+
+# AES key to encrypt traffic, must match receiver
+server_key: 0Vm0fyPobOScaYwOwvpPDg0pw0OUu3zUD68emEewido=
+
+# interfaces to copy and forward traffic from
+interfaces:
+  - eth0
+
+# Specify BPF filter to include in the capture.
+#  By default, traffic to the receiver is ignored
+packet_filter: false
