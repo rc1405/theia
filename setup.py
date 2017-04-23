@@ -17,10 +17,16 @@ setup(
     packages=['theia',],
     long_description=read('README.md'),
     classifiers=[
-        "Development Status :: Alpha",
+        "Development Status :: 2 - Pre-Alpha",
         "Topic :: Utilities",
         "License :: Apache 2.0",
     ],
-    data_files = [('/etc/theia', ['conf/agent.yaml','conf/server.yaml'])]
+    requires=[
+        "pyzmq",
+        "cryptography",
+        "PyYAML",
+        "msgpack"
+    ],
+    data_files = [('/etc/theia', ['conf/agent.yaml','conf/server.yaml'])],
     scripts = ["theia-server.py", "theia-agent.py", "theia-genkey.py"]
 )
